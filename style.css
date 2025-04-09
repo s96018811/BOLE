@@ -96,6 +96,14 @@ section::after {
     height: 1px;
     background-color: #ddd;
 }
+/* 於每個 section 社群媒體 */
+.subdomain .yt-subscribe,
+.subdomain .fb-follow {
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
 
 /* 去除最後一個 section 底部分隔線 */
 section:last-of-type::after {
