@@ -69,7 +69,7 @@ nav ul li a:hover {
     background-image: url('https://card.bolebonus.com/_files/52/8917052/f/camerad.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-position: center bottom; /* 調整為圖片的底部對齊 */
+    background-position: center 20%; /* 向下微調顯示位置 */
     background-repeat: no-repeat;
 }
 
@@ -184,25 +184,52 @@ footer a:hover {
 
 /* 手機版調整 */
 @media (max-width: 768px) {
+    /* 調整 Logo 字體大小 */
+    header .logo {
+        font-size: 2rem;  /* 減小字體大小 */
+        margin-right: 0;  /* 調整右邊距 */
+        text-align: center; /* 使Logo居中顯示 */
+    }
+
+    /* 調整 header 內的項目排列方式 */
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;  /* 居中對齊 */
         padding: 20px;
     }
 
+    /* 調整導航列在手機版顯示方式 */
     nav ul {
         flex-direction: column;
         gap: 15px;
         padding-left: 0;
     }
 
+    /* 調整每個 section 的排版 */
     section {
-        padding: 30px 20px;
-        margin: 20px auto;
+        padding: 20px; /* 輕微減少內邊距 */
+        margin: 20px auto; /* 增加上下間距 */
     }
 
+    /* 使段落內的文字在小螢幕上有更好的換行效果 */
+    section p {
+        font-size: 1rem; /* 調整字體大小 */
+        line-height: 1.5; /* 增加行間距，讓文字更易閱讀 */
+        margin-bottom: 20px;
+        word-wrap: break-word; /* 讓長文字在手機上自動換行 */
+    }
+
+    section ul li {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    /* 讓底部的 Footer 文字適應小螢幕 */
     footer {
         font-size: 0.8rem;
         padding: 15px;
     }
 }
+
