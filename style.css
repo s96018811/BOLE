@@ -203,13 +203,15 @@ footer a:hover {
         padding-left: 0;
     }
 
+    /* 設定 section 外邊距和內邊距 */
     section {
-        padding: 30px 20px;
-        margin: 20px auto;
-        max-width: 90%; /* 確保區塊不會超過螢幕寬度 */
+        padding: 20px;  /* 設定內邊距 */
+        margin: 20px;   /* 設定外邊距，左右都會有 */
+        max-width: 100%; /* 讓區塊可以填滿寬度 */
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 增加陰影，提升視覺效果 */
+        box-sizing: border-box;  /* 確保內邊距包含在寬度內 */
     }
 
     /* 增加段落的邊距與換行 */
@@ -217,8 +219,11 @@ footer a:hover {
         font-size: 1rem;
         margin-bottom: 20px;
         word-wrap: break-word; /* 確保長字不會跑出區塊 */
+        padding-left: 10px;  /* 增加左邊距 */
+        padding-right: 10px; /* 增加右邊距 */
     }
 
+    /* 設定列表項目的間距 */
     section ul li {
         font-size: 1rem;
         margin-bottom: 10px;
