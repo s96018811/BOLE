@@ -96,13 +96,6 @@ section::after {
     height: 1px;
     background-color: #ddd;
 }
-/* 手機版社群媒體按鈕樣式 */
-.subdomain .fb-follow {
-    margin-top: 20px;
-    display: block;
-    text-align: center;
-    font-size: 14px;
-}
 
 /* 去除最後一個 section 底部分隔線 */
 section:last-of-type::after {
