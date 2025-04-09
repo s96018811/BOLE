@@ -57,3 +57,25 @@ footer {
     text-align: center;
     padding: 20px;
 }
+/* 手機版選單改善間距 */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* 垂直間距 */
+        padding-left: 0;
+    }
+
+    nav ul li {
+        margin: 0; /* 清除原本的右邊間距 */
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        background-color: #BF0010; /* 主題色 */
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+    }
+}
