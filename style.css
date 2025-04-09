@@ -97,7 +97,6 @@ section::after {
     background-color: #ddd;
 }
 /* 於每個 section 社群媒體 */
-.subdomain .yt-subscribe,
 .subdomain .fb-follow {
     margin-top: 20px;
     display: block;
