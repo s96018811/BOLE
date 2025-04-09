@@ -72,6 +72,13 @@ nav ul li a:hover {
     background-position: center 20%; /* 向下微調顯示位置 */
     background-repeat: no-repeat;
 }
+/* 頁面中的logo圖片 */
+.subdomain-logo {
+  width: 20%;  
+  height: auto;  /* 保持圖片的比例 */
+  display: block;  /* 讓圖片顯示為區塊元素 */
+  margin-top: 10px;  /* 在圖片與文字之間添加間距 */
+}
 
 
 /* 主要內容區塊，每個 section 將有分隔線及白底 */
