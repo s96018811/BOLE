@@ -37,16 +37,21 @@ nav ul li a {
     border-radius: 4px;
     text-decoration: none;
 }
-.banner {
-    width: 100%;
+.banner-parallax {
+    position: relative;
+    height: 25vh; /* 只佔畫面 25% 高度 */
     overflow: hidden;
 }
 
-.banner-image {
+.parallax-bg {
+    background-image: url('https://card.bolebonus.com/_files/52/8917052/f/camerad.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
 }
+
 
 .content {
     padding: 20px;
