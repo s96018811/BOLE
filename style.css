@@ -1,8 +1,9 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;  /* 頁面背景色 */
+    color: #333;  /* 字體顏色 */
 }
 
 header {
@@ -10,7 +11,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 增加陰影，讓header看起來更有層次 */
 }
 
 header .logo img {
@@ -23,20 +25,23 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-left: 15px;
+    display: flex;
+    gap: 20px;
 }
 
 nav ul li a {
     color: white;
     background-color: #BF0010;  /* 主題色 */
-    padding: 8px 12px;
+    padding: 10px 15px;
     border-radius: 4px;
     text-decoration: none;
+    transition: background-color 0.3s ease; /* 平滑過渡 */
 }
+
+nav ul li a:hover {
+    background-color: #d32f2f; /* Hover效果 */
+}
+
 .banner-parallax {
     height: 25vh; /* 只佔畫面 25% 高度 */
     background-image: url('https://card.bolebonus.com/_files/52/8917052/f/camerad.jpg');
@@ -45,7 +50,6 @@ nav ul li a {
     background-position: center top;
     background-repeat: no-repeat;
 }
-
 
 .content {
     padding: 20px;
@@ -56,13 +60,24 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    font-size: 0.9rem;
 }
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
 /* 手機版選單改善間距 */
 @media (max-width: 768px) {
     nav ul {
         display: flex;
         flex-direction: column;
-        gap: 10px; /* 垂直間距 */
+        gap: 15px; /* 垂直間距 */
         padding-left: 0;
     }
 
@@ -77,5 +92,15 @@ footer {
         color: white;
         text-align: center;
         border-radius: 6px;
+    }
+
+    /* 修改section區塊內的排版 */
+    section {
+        padding: 30px 20px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px;
     }
 }
