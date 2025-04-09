@@ -9,18 +9,28 @@ body {
 }
 
 /* Header 區塊 */
+header {
+    display: flex; /* 使用 flexbox 排版 */
+    align-items: center; /* 垂直置中對齊內容 */
+    justify-content: space-between; /* 左右分開 */
+    padding: 15px 30px; /* 增加上下內邊距 */
+    background-color: #fff; /* 背景顏色 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 增加陰影提升視覺層次感 */
+}
+
 header .logo {
-    font-family: 'Microsoft JhengHei', sans-serif; /* 使用微軟正黑體，企業感較強 */
+    font-family: 'Microsoft JhengHei', sans-serif; /* 微軟正黑體 */
     font-weight: bold; /* 加粗字型 */
-    font-size: 2rem; /* 根據需要調整字體大小 */
+    font-size: 2.5rem; /* 增大字體大小 */
     color: #333; /* 深灰色 */
-    letter-spacing: 1px; /* 增加字母間距 */
-    text-transform: uppercase; /* 大寫字母（可以根據需要開關） */
+    letter-spacing: 2px; /* 增加字母間距 */
+    text-transform: uppercase; /* 大寫字母 */
+    margin-right: 50px; /* 右邊留空間，避免與導覽列擠在一起 */
 }
 
 /* 可根據需要進一步調整字型、顏色等 */
 header .logo span {
-    color: #BF0010;  /* 這裡選擇讓「柏樂」的字顏色使用主題色 */
+    color: #BF0010; /* 主題色 */
 }
 
 /* 導覽列 */
@@ -35,8 +45,8 @@ nav ul {
 nav ul li a {
     color: white;
     background-color: #BF0010;  /* 主題色 */
-    padding: 10px 15px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease; /* 平滑過渡 */
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -46,6 +56,7 @@ nav ul li a:hover {
     background-color: #d32f2f; /* hover 時顏色加深 */
     transform: translateY(-2px); /* 輕微浮動 */
 }
+
 
 /* Banner 區塊 */
 .banner-parallax {
