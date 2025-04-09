@@ -214,14 +214,6 @@ footer a:hover {
         box-sizing: border-box;  /* 確保內邊距包含在寬度內 */
     }
 
-    /* 設定子網域的邊距，並顯示底色 */
-    .subdomain {
-        margin: 20px;  /* 增加外邊距，讓底色露出來 */
-        padding: 15px;  /* 增加內邊距，提升可讀性 */
-        background-color: #f1f1f1; /* 調整底色 */
-        border-radius: 10px;
-    }
-
     /* 增加段落的邊距與換行 */
     section p {
         font-size: 1rem;
@@ -245,3 +237,4 @@ footer a:hover {
         padding: 15px;
     }
 }
+
