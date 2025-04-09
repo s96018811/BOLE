@@ -9,7 +9,6 @@ body {
 }
 
 /* Header 區塊 */
-/* Header 區塊中的 logo 部分 */
 header .logo {
     font-family: 'Microsoft JhengHei', sans-serif; /* 使用微軟正黑體，企業感較強 */
     font-weight: bold; /* 加粗字型 */
