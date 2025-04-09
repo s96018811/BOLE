@@ -18,14 +18,19 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 增加陰影提升視覺層次感 */
 }
 
+/* logo 標題字樣 */
 header .logo {
-    font-family: 'Microsoft JhengHei', sans-serif; /* 微軟正黑體 */
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; /* 使用更高品質的字體 */
     font-weight: bold; /* 加粗字型 */
-    font-size: 2.5rem; /* 增大字體大小 */
+    font-size: 3rem; /* 增大字體大小 */
     color: #333; /* 深灰色 */
     letter-spacing: 2px; /* 增加字母間距 */
     text-transform: uppercase; /* 大寫字母 */
     margin-right: 50px; /* 右邊留空間，避免與導覽列擠在一起 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 加入輕微陰影 */
+    background: linear-gradient(45deg, #BF0010, #ff4f4f); /* 漸變色 */
+    -webkit-background-clip: text; /* 文字漸變 */
+    color: transparent; /* 文字顏色設定為透明，使用背景漸變顏色 */
 }
 
 /* 可根據需要進一步調整字型、顏色等 */
