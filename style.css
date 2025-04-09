@@ -9,19 +9,19 @@ body {
 }
 
 /* Header 區塊 */
-header {
-    background-color: #fff; /* 主logo背景為白色 */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 輕微陰影 */
+/* Header 區塊中的 logo 部分 */
+header .logo {
+    font-family: 'Microsoft JhengHei', sans-serif; /* 使用微軟正黑體，企業感較強 */
+    font-weight: bold; /* 加粗字型 */
+    font-size: 2rem; /* 根據需要調整字體大小 */
+    color: #333; /* 深灰色 */
+    letter-spacing: 1px; /* 增加字母間距 */
+    text-transform: uppercase; /* 大寫字母（可以根據需要開關） */
 }
 
-header .logo img {
-    width: 150px;
-    background-color: white; /* Logo 背景 */
-    padding: 5px;
+/* 可根據需要進一步調整字型、顏色等 */
+header .logo span {
+    color: #BF0010;  /* 這裡選擇讓「柏樂」的字顏色使用主題色 */
 }
 
 /* 導覽列 */
