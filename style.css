@@ -69,9 +69,10 @@ nav ul li a:hover {
     background-image: url('https://card.bolebonus.com/_files/52/8917052/f/camerad.jpg');
     background-attachment: fixed;
     background-size: cover;
-    background-position: center top;
+    background-position: center bottom; /* 調整為圖片的底部對齊 */
     background-repeat: no-repeat;
 }
+
 
 /* 主要內容區塊，每個 section 將有分隔線及白底 */
 section {
