@@ -184,52 +184,55 @@ footer a:hover {
 
 /* 手機版調整 */
 @media (max-width: 768px) {
-    /* 調整 Logo 字體大小 */
-    header .logo {
-        font-size: 2rem;  /* 減小字體大小 */
-        margin-right: 0;  /* 調整右邊距 */
-        text-align: center; /* 使Logo居中顯示 */
-    }
-
-    /* 調整 header 內的項目排列方式 */
+    /* Header */
     header {
-        flex-direction: column;
-        align-items: center;  /* 居中對齊 */
+        flex-direction: column; /* 標題與導覽列垂直排列 */
+        align-items: flex-start;
         padding: 20px;
     }
 
-    /* 調整導航列在手機版顯示方式 */
+    .logo {
+        font-size: 2rem; /* 調整 logo 字體大小 */
+        margin-bottom: 15px; /* 在 logo 與導覽列之間留些空間 */
+    }
+
+    /* 導覽列調整為垂直排列 */
     nav ul {
         flex-direction: column;
         gap: 15px;
         padding-left: 0;
     }
 
-    /* 調整每個 section 的排版 */
+    /* 主要內容區塊 */
     section {
-        padding: 20px; /* 輕微減少內邊距 */
-        margin: 20px auto; /* 增加上下間距 */
+        padding: 30px 20px; /* 減少左右的內邊距 */
+        margin: 20px auto;
     }
 
-    /* 使段落內的文字在小螢幕上有更好的換行效果 */
+    /* 內容文字的換行與縮排 */
     section p {
-        font-size: 1rem; /* 調整字體大小 */
-        line-height: 1.5; /* 增加行間距，讓文字更易閱讀 */
-        margin-bottom: 20px;
-        word-wrap: break-word; /* 讓長文字在手機上自動換行 */
+        font-size: 1rem;
+        margin-bottom: 15px;
+        word-wrap: break-word; /* 允許長單字換行 */
     }
 
+    /* 列表項目的調整 */
     section ul li {
         font-size: 1rem;
         margin-bottom: 10px;
         padding-left: 20px;
-        position: relative;
     }
 
-    /* 讓底部的 Footer 文字適應小螢幕 */
+    section ul li::before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        color: #BF0010;
+    }
+
+    /* Footer 字體大小調整 */
     footer {
         font-size: 0.8rem;
         padding: 15px;
     }
 }
-
