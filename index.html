@@ -110,6 +110,28 @@
   <a href="https://news.bolebonus.com/" class="load-more-btn">更多新聞</a>
 </div>
 
+<div id="latest-news">
+  <h3>最新新聞</h3>
+  <div id="news-list"></div>
+</div>
+
+<script>
+  fetch('https://raw.githubusercontent.com/s96018811/BOLE/main/news_data.json')
+    .then(res => res.json())
+    .then(data => {
+      const newsList = document.getElementById('news-list');
+      data.forEach(item => {
+        const div = document.createElement('div');
+        div.classList.add('news-item');
+        div.innerHTML = `
+          <img src="${item.image}" alt="${item.title}">
+          <a href="${item.url}" target="_blank">${item.title}</a>
+        `;
+        newsList.appendChild(div);
+      });
+    });
+</script>
+
 
   <section class="about">
     <h2>關於柏傳媒</h2>
