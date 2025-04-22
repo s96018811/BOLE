@@ -1,9 +1,9 @@
 name: News Scraper
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # 可以手動執行
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'  # 每天 UTC 0 點自動執行一次（台灣時間早上 8 點）
 
 jobs:
   scrape:
@@ -26,11 +26,11 @@ jobs:
 
       - name: Commit and push
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN1: ${{ secrets.GH_TOKEN1 }}  # 使用 Secret 中的 Token
         run: |
-          git config --global user.name 's96018811'
-          git config --global user.email 's96018811@gmail.com'
+          git config --global user.name 'github-actions-bot'  # 設定新的名稱
+          git config --global user.email 'github-actions-bot@users.noreply.github.com'  # 設定新的電子郵件
           git add news_data.json
           git commit -m "Update news_data.json" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${GH_TOKEN1}@github.com/${{ github.repository }}
           git push origin HEAD:main
