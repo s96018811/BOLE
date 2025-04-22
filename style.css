@@ -157,6 +157,44 @@ nav a {
   font-weight: bold;
 }
 
+/* 紅底白字 + 滑動光影動畫 */
+.load-more-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #BF0010;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: "Microsoft JhengHei", sans-serif;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* 滑動光影 */
+.load-more-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.load-more-btn:hover::after {
+  left: 100%;
+}
+
+.load-more-btn:hover {
+  background-color: #a8000e;
+}
+
 .about {
   padding: 2rem;
   background: #fff8f8;
