@@ -24,13 +24,18 @@ jobs:
       - name: Run scraper
         run: python scraper.py
 
-      - name: Commit and push
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}   # 這裡對應你剛剛設定的 Secret 名稱
+      - name: Set up Git credentials
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
+
+      - name: Pull latest changes
+        run: |
+          git pull origin main --rebase || echo "No changes to pull"
+
+      - name: Commit and push
+        run: |
           git add news_data.json
           git commit -m "Update news_data.json" || echo "No changes to commit"
-          git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}
           git push origin HEAD:main
