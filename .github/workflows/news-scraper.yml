@@ -26,10 +26,10 @@ jobs:
 
       - name: Commit and push
         env:
-          GH_TOKEN1: ${{ secrets.GH_TOKEN1 }}  # 使用 Secret 中的 Token
+          GH_TOKEN1: ${{ secrets.GH_TOKEN1 }}  # 這裡對應你在 Secrets 裡設定的 Token 名稱
         run: |
-          git config --global user.name 'github-actions-bot'  # 設定新的名稱
-          git config --global user.email 'github-actions-bot@users.noreply.github.com'  # 設定新的電子郵件
+          git config --global user.name 's96018811'
+          git config --global user.email 's96018811@users.noreply.github.com'  # 請替換成你的 GitHub Email
           git add news_data.json
           git commit -m "Update news_data.json" || echo "No changes to commit"
           git remote set-url origin https://x-access-token:${GH_TOKEN1}@github.com/${{ github.repository }}
