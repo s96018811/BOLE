@@ -1,248 +1,175 @@
-/* 整體基礎樣式 */
+/* style.css */
+:root {
+  --main-color: #BF0010;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;  /* 淡灰背景 */
-    color: #333;              /* 主字體顏色 */
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Noto Sans TC', sans-serif;
+  color: #333;
 }
 
-/* Header 區塊 */
 header {
-    display: flex; /* 使用 flexbox 排版 */
-    align-items: center; /* 垂直置中對齊內容 */
-    justify-content: space-between; /* 左右分開 */
-    padding: 15px 30px; /* 增加上下內邊距 */
-    background-color: #fff; /* 背景顏色 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 增加陰影提升視覺層次感 */
+  background: var(--main-color);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
 
-/* logo 標題字樣 */
-header .logo {
-    font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; /* 使用更高品質的字體 */
-    font-weight: bold; /* 加粗字型 */
-    font-size: 3rem; /* 增大字體大小 */
-    color: #333; /* 深灰色 */
-    letter-spacing: 2px; /* 增加字母間距 */
-    text-transform: uppercase; /* 大寫字母 */
-    margin-right: 50px; /* 右邊留空間，避免與導覽列擠在一起 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 加入輕微陰影 */
-    background: linear-gradient(45deg, #BF0010, #ff4f4f); /* 漸變色 */
-    -webkit-background-clip: text; /* 文字漸變 */
-    color: transparent; /* 文字顏色設定為透明，使用背景漸變顏色 */
-}
-
-/* 可根據需要進一步調整字型、顏色等 */
-header .logo span {
-    color: #BF0010; /* 主題色 */
-}
-
-/* 導覽列 */
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
 }
 
-nav ul li a {
-    color: white;
-    background-color: #BF0010;  /* 主題色 */
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* 平滑過渡 */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+nav li {
+  margin: 0 1rem;
 }
 
-nav ul li a:hover {
-    background-color: #d32f2f; /* hover 時顏色加深 */
-    transform: translateY(-2px); /* 輕微浮動 */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-
-/* Banner 區塊 */
-.banner-parallax {
-    height: 25vh; /* 佔視窗 25% */
-    background-image: url('https://card.bolebonus.com/_files/52/8917052/f/camerad.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center 20%; /* 向下微調顯示位置 */
-    background-repeat: no-repeat;
-}
-/* 頁面中的logo圖片 */
-.subdomain-logo {
-  width: 20%;  
-  height: auto;  /* 保持圖片的比例 */
-  display: block;  /* 讓圖片顯示為區塊元素 */
-  margin-top: 10px;  /* 在圖片與文字之間添加間距 */
+.slider-container {
+  background-color: #BF0010; /* 整條紅底 */
+  padding: 10px 0; /* 上下留點空間 */
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
 }
 
-
-/* 主要內容區塊，每個 section 將有分隔線及白底 */
-section {
-    background-color: #fff;
-    max-width: 1200px;
-    margin: 40px auto;  /* 兩側置中，區塊間較明顯 */
-    padding: 30px 30px;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 輕微陰影提升層次感 */
-    position: relative;
+.slider {
+  display: inline-flex;
+  scroll-snap-align: start;
+  margin: 0 auto;
+  padding: 0 10px; /* 讓左右文字不貼邊 */
 }
 
-/* 於每個 section 底部加入分隔線 */
-section::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 1px;
-    background-color: #ddd;
+.slider a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: transparent; /* 按鈕改為透明，靠容器紅底 */
+  border-radius: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 去除最後一個 section 底部分隔線 */
-section:last-of-type::after {
-    display: none;
+.slider a:hover {
+  background-color: #fff;
+  color: #BF0010;
 }
 
-/* 標題樣式 */
-section h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-    letter-spacing: 1px;
+.slider a.active {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2); /* active 狀態可以有一點區別 */
 }
 
-section h2 {
-    font-size: 1.8rem;
-    color: #BF0010;  /* 主題色 */
-    margin-bottom: 15px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 8px 0;
 }
 
-/* 內文與列表 */
-section p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
+  font-size: 16px;
+  padding-left: 100%;
+  color: #BF0010;
 }
 
-section ul {
-    margin-top: 10px;
-    list-style: none;
-    padding-left: 0;
+.marquee-content a {
+  color: #BF0010;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 
-section ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
+.marquee-content a:hover {
+  color: #660000;
+  text-decoration: underline;
 }
 
-section ul li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #BF0010; /* 使用主題色作為列表標記 */
+.separator {
+  margin: 0 10px;
+  color: #BF0010;
 }
 
-/* Footer 區塊 */
-footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* 按鈕範例：如果你在內容中想使用更專業的按鈕 */
-.button {
-    display: inline-block;
-    padding: 12px 25px;
-    background: linear-gradient(145deg, #BF0010, #d32f2f);
-    color: #fff;
-    font-size: 1rem;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    margin-top: 10px;
-}
-
-.button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-}
-
-/* 手機版調整 */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
-
-    /* logo 改成左邊顯示並調整字型 */
-    header .logo {
-        font-size: 2.5rem; /* 調整字體大小 */
-        margin-right: 0;   /* 去除右邊空白 */
-        margin-bottom: 20px; /* 增加底部間距 */
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        padding-left: 0;
-    }
-
-    /* 設定 section 外邊距和內邊距 */
-      section {
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 100%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
+@keyframes scroll-left {
+  from {
+    transform: translateX(0%);
   }
-
-    /* 增加段落的邊距與換行 */
-    section p {
-        font-size: 1rem;
-        margin-bottom: 20px;
-        word-wrap: break-word; /* 確保長字不會跑出區塊 */
-        padding-left: 10px;  /* 增加左邊距 */
-        padding-right: 10px; /* 增加右邊距 */
-    }
-
-    /* 設定列表項目的間距 */
-    section ul li {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        padding-left: 20px;
-        position: relative;
-    }
-
-    /* 調整footer */
-    footer {
-        font-size: 0.8rem;
-        padding: 15px;
-    }
-
+  to {
+    transform: translateX(-100%);
+  }
 }
 
+
+.hero {
+  padding: 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.hero h1 {
+  color: var(--main-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.article {
+  border-bottom: 2px solid var(--main-color);
+  padding-bottom: 1rem;
+}
+
+.article img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.article h3 {
+  margin: 0.5rem 0;
+}
+
+.article p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.read-more {
+  color: var(--main-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.about {
+  padding: 2rem;
+  background: #fff8f8;
+}
+
+.about h2 {
+  color: var(--main-color);
+}
+
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
