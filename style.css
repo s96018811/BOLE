@@ -229,11 +229,13 @@ footer {
   .news-item:hover {
     transform: translateY(-4px);
   }
-  .news-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.news-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* 確保圖片裁切並保持 16:9 比例 */
+  aspect-ratio: 16 / 9; /* 強制為 16:9 比例 */
+}
   .news-item h3 {
     font-size: 1rem;
     padding: 12px;
