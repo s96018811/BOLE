@@ -39,3 +39,9 @@ jobs:
           git add news_data.json
           git commit -m "Update news_data.json" || echo "No changes to commit"
           git push origin HEAD:main
+          
+      - name: Run scraper
+        run: |
+          python scraper.py
+          echo "=== news_data.json content ==="
+          cat news_data.json
