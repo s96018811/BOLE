@@ -36,7 +36,7 @@ for article in articles:
         })
 
 # 儲存為 JSON 檔案
-with open('BOLE/news_data.json', 'w', encoding='utf-8') as f:
+with open('news_data.json', 'w', encoding='utf-8') as f:
     json.dump(news_items, f, ensure_ascii=False, indent=2)
 
 print("抓取成功！")
