@@ -9,16 +9,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>柏傳媒｜The BO Media</h1>
-    <nav>
-      <ul>
-        <li><a href="https://news.bolebonus.com/">最新首頁</a></li>
-        <li><a href="https://news.bolebonus.com/p/404-1111-7489.php">關於我們</a></li>
-        <li><a href="https://news.bolebonus.com/p/412-1111-85.php">聯絡我們</a></li>
-      </ul>
-    </nav>
-  </header>
+      <header class="pulse">
+        <h1>柏傳媒｜The BO Media</h1>
+        <nav>
+            <ul>
+                <li><a href="https://news.bolebonus.com/">最新首頁</a></li>
+                <li><a href="https://news.bolebonus.com/p/404-1111-7489.php">關於我們</a></li>
+                <li><a href="https://news.bolebonus.com/p/412-1111-85.php">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
  <div class="slider-container">
       <div class="slider">
       <a href="https://news.bolebonus.com/p/403-1111-356-1.php">好康</a>
@@ -164,6 +165,55 @@
       console.error('Error loading news data:', error);
       document.getElementById('news-container').innerText = '⚠️ 無法載入新聞資料';
     });
+    
+
+        // 創建懸浮粒子
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // 隨機大小 (1px 到 3px)
+                const size = Math.random() * 3 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // 隨機位置
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.bottom = `-10px`;
+                
+                // 隨機動畫持續時間和延遲
+                const duration = Math.random() * 15 + 10;
+                const delay = Math.random() * 5;
+                particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
+                
+                // 隨機透明度
+                particle.style.opacity = Math.random() * 0.5 + 0.3;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // 頁面載入時創建粒子
+        window.addEventListener('load', createParticles);
+        
+        // 為導航鏈接添加點擊動畫
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 添加點擊動畫
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    window.location.href = this.href;
+                }, 300);
+            });
+        });
+
 </script>
 
 </body>
