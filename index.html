@@ -188,7 +188,8 @@
                 particle.style.height = `${size}px`;
                 
                 // 隨機位置
-                particle.style.left = `${Math.random() * 100}vw`;
+                // 設定 left 的範圍略縮小一點
+                particle.style.left = `${Math.random() * 98}vw`;
                 particle.style.bottom = `-10px`;
                 
                 // 隨機動畫持續時間和延遲
