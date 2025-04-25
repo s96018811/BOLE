@@ -219,6 +219,7 @@ nav a {
   max-width: 100%;
   display: flex;
   justify-content: center;
+  min-height: 70px; /* 🟢 加這行：確保內部按鈕有足夠高度 */
 }
 
 
