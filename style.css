@@ -223,6 +223,9 @@ nav a {
   overflow: visible; /* 👉 確保內容不被遮擋 */
 }
 
+iframe[src*="youtube.com/subscribe_embed"] {
+  height: 60px !important;
+}
 
 
 footer {
