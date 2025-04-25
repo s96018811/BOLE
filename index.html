@@ -126,31 +126,56 @@
 
 <div id="news-container" class="news-grid"></div>
 
-  <section class="about">
-    <h2>關於柏傳媒</h2>
-    <p>柏傳媒（The BO Media）以台灣為基地，整合新聞報導、圖文深度與影音多媒體，為讀者提供全方位的視角與分析。我們秉持公正、專業的精神，期望成為您獲取資訊的首選平台。</p>
-      <!-- YouTube 訂閱按鈕 -->
-  <script src="https://apis.google.com/js/platform.js"></script>
-  <div class="g-ytsubscribe" data-channelid="UCFPQGHyZH4pPelLcXmGztAw" data-layout="full" data-count="hidden"></div>
+<section class="about">
+  <h2>關於柏傳媒</h2>
+  <p>柏傳媒（The BO Media）以台灣為基地，整合新聞報導、圖文深度與影音多媒體，為讀者提供全方位的視角與分析。我們秉持公正、專業的精神，期望成為您獲取資訊的首選平台。</p>
 
-<!-- 載入 Facebook SDK -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"></script>
-  <!-- Facebook 追蹤按鈕 -->
-  <div class="fb-page" data-href="https://www.facebook.com/bomediafb/" data-tabs="" data-width="" data-height="" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
-    <blockquote cite="https://www.facebook.com/bomediafb/" class="fb-xfbml-parse-ignore">
-      <a href="https://www.facebook.com/bomediafb/">柏傳媒｜The BO Media</a>
-    </blockquote>
+  <div class="social-buttons">
+    <div class="social-item">
+      <div class="g-ytsubscribe"
+        data-channelid="UCFPQGHyZH4pPelLcXmGztAw"
+        data-layout="full"
+        data-count="hidden"></div>
+    </div>
+
+    <div class="social-item">
+      <div class="fb-page"
+        data-href="https://www.facebook.com/bomediafb/"
+        data-tabs=""
+        data-width=""
+        data-height=""
+        data-small-header="true"
+        data-adapt-container-width="true"
+        data-hide-cover="false"
+        data-show-facepile="false">
+        <blockquote cite="https://www.facebook.com/bomediafb/" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/bomediafb/">柏傳媒｜The BO Media</a>
+        </blockquote>
+      </div>
+    </div>
   </div>
-    <p><a href="https://news.bolebonus.com/" class="read-more">前往主站 →</a></p>
-  </section>
+
+  <p><a href="https://news.bolebonus.com/" class="read-more">前往主站 →</a></p>
+</section>
+
 
   <footer>
     <p>&copy; 2025 柏傳媒 The BO Media</p>
     <p> 服務時間：09:00~18:00｜客服信箱：bolebonus@gmail.com｜統一編號：28558978
 </p>
   </footer>
-  
+
+<!-- YouTube script 放最底下 -->
+<script src="https://apis.google.com/js/platform.js"></script>
+
+<!-- Facebook SDK script 放最底下（獨立，不包進其他 script）-->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+  src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v12.0"></script>
+
+<!-- 你自己網站的 JavaScript -->
 <script>
+  // 載入新聞資料
   fetch('news_data.json')
     .then(response => response.json())
     .then(data => {
@@ -171,56 +196,47 @@
       console.error('Error loading news data:', error);
       document.getElementById('news-container').innerText = '⚠️ 無法載入新聞資料';
     });
-    
 
-        // 創建懸浮粒子
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 25;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // 隨機大小 (1px 到 3px)
-                const size = Math.random() * 3 + 1;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // 隨機位置
-                // 設定 left 的範圍略縮小一點
-                particle.style.left = `${Math.random() * 98}vw`;
-                particle.style.bottom = `-10px`;
-                
-                // 隨機動畫持續時間和延遲
-                const duration = Math.random() * 15 + 10;
-                const delay = Math.random() * 5;
-                particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
-                
-                // 隨機透明度
-                particle.style.opacity = Math.random() * 0.5 + 0.3;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // 頁面載入時創建粒子
-        window.addEventListener('load', createParticles);
-        
-        // 為導航鏈接添加點擊動畫
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // 添加點擊動畫
-                this.style.transform = 'scale(0.9)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                    window.location.href = this.href;
-                }, 300);
-            });
-        });
+  // 創建懸浮粒子
+  function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 25;
 
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+
+      const size = Math.random() * 3 + 1;
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+
+      particle.style.left = `${Math.random() * 98}vw`;
+      particle.style.bottom = `-10px`;
+
+      const duration = Math.random() * 15 + 10;
+      const delay = Math.random() * 5;
+      particle.style.animation = `float ${duration}s linear ${delay}s infinite`;
+
+      particle.style.opacity = Math.random() * 0.5 + 0.3;
+
+      particlesContainer.appendChild(particle);
+    }
+  }
+
+  // 頁面載入時創建粒子
+  window.addEventListener('load', createParticles);
+
+  // 為導航鏈接添加點擊動畫
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      this.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        this.style.transform = '';
+        window.location.href = this.href;
+      }, 300);
+    });
+  });
 </script>
 
 </body>
