@@ -219,7 +219,8 @@ nav a {
   max-width: 100%;
   display: flex;
   justify-content: center;
-  min-height: 70px; /* 🟢 加這行：確保內部按鈕有足夠高度 */
+  min-height: 60px; /* 👉 比 iframe 高一點，避免裁切 */
+  overflow: visible; /* 👉 確保內容不被遮擋 */
 }
 
 
